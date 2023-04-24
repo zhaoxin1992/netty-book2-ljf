@@ -21,7 +21,7 @@ public class TimeServerHandler implements Runnable {
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see java.lang.Runnable#run()
      */
     @Override

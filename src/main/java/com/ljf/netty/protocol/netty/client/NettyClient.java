@@ -1,5 +1,8 @@
 package com.ljf.netty.protocol.netty.client;
 
+import com.ljf.netty.protocol.netty.NettyConstant;
+import com.ljf.netty.protocol.netty.codec.NettyMessageDecoder;
+import com.ljf.netty.protocol.netty.codec.NettyMessageEncoder;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -9,17 +12,13 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.timeout.ReadTimeoutHandler;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import java.net.InetSocketAddress;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-
-import com.ljf.netty.protocol.netty.NettyConstant;
-import com.ljf.netty.protocol.netty.codec.NettyMessageDecoder;
-import com.ljf.netty.protocol.netty.codec.NettyMessageEncoder;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 
 /**
  * @author Lilinfeng

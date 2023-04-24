@@ -2,7 +2,6 @@ package com.ljf.netty.nio;
 
 /**
  * @author lilinfeng
- * @version 1.0
  * @date 2014年2月14日
  */
 public class TimeClient {

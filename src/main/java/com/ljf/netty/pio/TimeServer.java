@@ -1,14 +1,13 @@
 package com.ljf.netty.pio;
 
+import com.ljf.netty.bio.TimeServerHandler;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-import com.ljf.netty.bio.TimeServerHandler;
-
 /**
  * @author lilinfeng
- * @version 1.0
  * @date 2014年2月14日
  */
 public class TimeServer {

@@ -1,16 +1,15 @@
 package com.ljf.netty.protocol.netty.client;
 
-import io.netty.channel.ChannelHandlerAdapter;
-import io.netty.channel.ChannelHandlerContext;
-
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
-
 import com.ljf.netty.protocol.netty.MessageType;
 import com.ljf.netty.protocol.netty.struct.Header;
 import com.ljf.netty.protocol.netty.struct.NettyMessage;
+import io.netty.channel.ChannelHandlerAdapter;
+import io.netty.channel.ChannelHandlerContext;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author Lilinfeng
@@ -38,7 +37,7 @@ public class HeartBeatReqHandler extends ChannelHandlerAdapter {
                 && message.getHeader().getType() == MessageType.HEARTBEAT_RESP
                 .value()) {
             LOG.info("Client receive server heart beat message : ---> "
-                            + message);
+                    + message);
         } else
             ctx.fireChannelRead(msg);
     }
@@ -54,7 +53,7 @@ public class HeartBeatReqHandler extends ChannelHandlerAdapter {
         public void run() {
             NettyMessage heatBeat = buildHeatBeat();
             LOG.info("Client send heart beat messsage to server : ---> "
-                            + heatBeat);
+                    + heatBeat);
             ctx.writeAndFlush(heatBeat);
         }
 

@@ -1,13 +1,12 @@
 package com.ljf.netty.protocol.netty.client;
 
+import com.ljf.netty.protocol.netty.MessageType;
+import com.ljf.netty.protocol.netty.struct.Header;
+import com.ljf.netty.protocol.netty.struct.NettyMessage;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelPipeline;
-
-import com.ljf.netty.protocol.netty.MessageType;
-import com.ljf.netty.protocol.netty.struct.Header;
-import com.ljf.netty.protocol.netty.struct.NettyMessage;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
