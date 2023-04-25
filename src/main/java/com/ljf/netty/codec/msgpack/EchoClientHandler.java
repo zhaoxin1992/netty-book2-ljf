@@ -1,18 +1,14 @@
-package com.ljf.netty.frame.delimiter;
+package com.ljf.netty.codec.msgpack;
 
-import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 
+import java.util.ArrayList;
+
 /**
- * @author lilinfeng
- * @date 2014年2月14日
+ * @author ray.zhao
  */
 public class EchoClientHandler extends ChannelHandlerAdapter {
-
-    private int counter;
-
-    static final String ECHO_REQ = "Hi, Lilinfeng. Welcome to Netty.$_";
 
     /**
      * Creates a client-side handler.
@@ -22,16 +18,25 @@ public class EchoClientHandler extends ChannelHandlerAdapter {
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) {
-        for (int i = 0; i < 10; i++) {
-            ctx.writeAndFlush(Unpooled.copiedBuffer(ECHO_REQ.getBytes()));
+        for (int i = 0; i < 1; i++) {
+            ctx.write(UserInfo(i));
         }
+        ctx.flush();
     }
+
+    private ArrayList<String> UserInfo(int i) {
+        ArrayList<String> src = new ArrayList<>();
+        src.add("a" + i);
+        src.add("b" + i);
+        src.add("c" + i);
+        return src;
+    }
+
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg)
             throws Exception {
-        System.out.println("This is " + ++counter + " times receive server : ["
-                + msg + "]");
+        System.out.println("Receive server response : [" + msg + "]");
     }
 
     @Override
@@ -44,4 +49,5 @@ public class EchoClientHandler extends ChannelHandlerAdapter {
         cause.printStackTrace();
         ctx.close();
     }
+
 }
