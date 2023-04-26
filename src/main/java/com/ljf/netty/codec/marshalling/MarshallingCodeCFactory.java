@@ -5,6 +5,7 @@ import org.jboss.marshalling.MarshallerFactory;
 import org.jboss.marshalling.Marshalling;
 import org.jboss.marshalling.MarshallingConfiguration;
 
+
 /**
  * @author Lilinfeng
  * @version 1.0
